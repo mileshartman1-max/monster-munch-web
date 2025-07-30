@@ -1,3 +1,8 @@
+type MonsterTile = {
+  id: string;
+  src: string;
+  selected?: boolean;
+};
 
 import React, { useEffect, useState } from 'react';
 import { Howl } from 'howler';
@@ -48,12 +53,12 @@ function getRandomMonster() {
   return MONSTERS[Math.floor(Math.random() * MONSTERS.length)];
 }
 
-function generateBoard() {
-  return Array.from({ length: BOARD_SIZE * BOARD_SIZE }, () => getRandomMonster());
+function generateBoard(): MonsterTile[] {
+  return Array.from({ length: BOARD_SIZE * BOARD_SIZE }, () => ({ ...getRandomMonster(), selected: false }));
 }
 
 export default function Home() {
-  const [board, setBoard] = useState(generateBoard);
+  const [board, setBoard] = useState<MonsterTile[]>(generateBoard);
   const [score, setScore] = useState(0);
   const [user, setUser] = useState<any>(null);
   const [highscores, setHighscores] = useState<any[]>([]);
