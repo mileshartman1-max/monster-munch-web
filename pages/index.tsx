@@ -1,0 +1,1 @@
+// Placeholder - replace with Firebase-integrated version.

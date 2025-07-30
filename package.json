@@ -1,0 +1,10 @@
+{
+  "name": "monster-munch-web",
+  "dependencies": {
+    "firebase": "^9.0.0",
+    "howler": "^2.2.3",
+    "next": "13.4.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
